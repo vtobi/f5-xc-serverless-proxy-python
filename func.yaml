@@ -1,0 +1,13 @@
+specVersion: 0.35.0
+name: proxy-python
+runtime: python
+created: 2023-09-01T14:56:53.153926-07:00
+
+build:
+  git:
+    url: https://github.com/vtobi/f5-xc-serverless-proxy-python.git   # required, git repository with the function source code
+    revision: main                                    # optional, git revision to be used (branch, tag, commit)
+    # contextDir: myfunction                          # optional, needed only if the function is not located in the repository root folder
+  buildpacks: []
+  builder: ""
+  buildEnvs: []
