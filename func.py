@@ -1,7 +1,8 @@
 from parliament import Context
 from flask import Request
 import json
-
+import os
+import urllib3
 
 # parse request body, json data or URL query parameters
 def payload_print(req: Request) -> str:
@@ -52,6 +53,7 @@ def main(context: Context):
     """
 
     # Add your business logic here
+    """
     print("Received request")
 
     if 'request' in context.keys():
@@ -61,15 +63,7 @@ def main(context: Context):
     else:
         print("Empty request", flush=True)
         return "{}", 200
-
-
-import json
-import os
-
-import urllib3
-
-
-def main(event, context):
+    """
     url = os.environ['URL']
 
     # Two way to have http method following if lambda proxy is enabled or not
@@ -114,3 +108,5 @@ def main(event, context):
         }
 
     return response
+
+
